@@ -62,7 +62,6 @@ ps1_init() {
   local W="\[\033[0;37m\]"    # white
   local WI="\[\033[1;37m\]"   # white
 
-  source $HOME/.coloring
   export PS1="${RI}[${CI}\u${WI} \w ${RI}]${NONE} "
 }
 
