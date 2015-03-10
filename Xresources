@@ -1,0 +1,74 @@
+! Grant Hernandez Xresources
+
+Xft.antialias: true
+Xft.autohint: 1
+Xft.dpi: 99
+Xft.hinting: true
+Xft.lcdfilter: lcdslight
+Xft.rgba: rgb
+
+!!!!!!!!!!!!!!!!!!!!!!1
+! Urxvt configuration
+URxvt.background: #000000
+URxvt.foreground: #ACB4BF
+URxvt*boldFont: xft:Tamsyn:autohint=true:size=10:style=Bold
+URxvt*font: xft:Tamsyn:style=Regular:autohint=true:size=10
+
+! ProFont
+!URxvt*font: xft:ProFont:style=Regular:autohint=true:size=9
+!URxvt*boldFont: xft:ProFont:style=Bold:autohint=true:size=9
+
+URxvt.buffered: true
+URxvt.cutchars: "`()'*<>[]{|}!"
+URxvt.pointerBlank: true
+URxvt.scrollBar: false
+URxvt.urgentOnBell: True
+URxvt.url-launcher: /usr/bin/firefox-bin
+
+! Allows for control bkspc
+URxvt.keysym.C-BackSpace: \027
+URxvt.keysym.C-Down: perl:font-size:decrease
+URxvt.keysym.C-S-Down: perl:font-size:decglobal
+URxvt.keysym.C-S-Up: perl:font-size:incglobal
+URxvt.keysym.C-Up: perl:font-size:increase
+
+URxvt.perl-lib: /usr/lib/urxvt/perl/
+URxvt.matcher.button: 1
+URxvt.perl-ext-common: default,matcher,searchable-scrollback,font-size
+
+!!!!!!!!!!!!!!!!!!!!!!!!
+! Color Scheme
+*foreground: #1C2027
+*background: #CFCFD9
+
+! black
+*color0: #192033
+*color8: #666666
+
+! red
+*color1: #A62A3E
+*color9: #F04758
+
+! green
+*color2: #38912B
+*color10: #93C724
+
+! yellow
+*color3: #B27D12
+*color11: #DDB62B
+
+! blue
+*color4: #355C9A
+*color12: #45A3E6
+
+! magenta
+*color5: #7C4F9F
+*color13: #C953EF
+
+! cyan
+*color6: #258F8F
+*color14: #60C6C8
+
+! white
+*color7: #77858C
+*color15: #C0C0C0

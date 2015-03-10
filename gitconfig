@@ -1,0 +1,23 @@
+[user]
+  name = Grant Hernandez
+  email = grant.h.hernandez@gmail.com
+[merge]
+  tool = diff
+[push]
+  default = simple
+[core]
+  autocrlf = input
+
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+
+[alias]
+  br = branch
+  co = checkout
+  ci = commit
+  di = diff
+  st = status
+  sl = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all --since='90 days ago'
+  summary = show  # Mercurial crib
