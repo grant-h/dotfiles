@@ -99,7 +99,9 @@ set relativenumber
 set notimeout ttimeout ttimeoutlen=200
 
 " Use <F11> to toggle between 'paste' and 'nopaste'
-set pastetoggle=<Leader>p
+" BUG: pasting things with <Leader>p will exit paste mode :(
+" set pastetoggle=<Leader>p
+set pastetoggle=<F11>
 
 " Listchars for showing tabs and trailing whitespace
 set list
