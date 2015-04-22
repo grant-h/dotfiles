@@ -147,6 +147,8 @@ inoremap <right> <nop>
 " Make j + k sane
 nnoremap j gj
 nnoremap k gk
+vnoremap j gj
+vnoremap k gk
 
 " Quick and easy ESC key. Optional for actual use
 map! jk <ESC>
