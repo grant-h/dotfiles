@@ -8,7 +8,6 @@ syndaemon -i 2 -d -K -t &
 #~/bin/setbg_time.sh &
 #parcellite &
 autocutsel -fork &
-autocutsel -fork -s PRIMARY &
 xscreensaver -no-splash &
 #xautolock -notifier /home/thinkfast/bin/notify-xautolock.sh -notify 50 -locker slimlock -time 10 &
 urxvtd -q -o -f &
