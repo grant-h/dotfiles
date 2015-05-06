@@ -229,7 +229,7 @@ nmap <leader>bq :bp <BAR> bd #<cr>
 " next search
 nnoremap <Leader>l :nohl<CR>:redraw!<CR>
 " Quick access to CtrlP
-nnoremap <Leader><Leader> :CtrlPBuffer<CR>
+nnoremap <Leader><Leader> :CtrlP<CR>
 " NERDTree pane
 nnoremap <Leader>t :NERDTreeToggle<CR>
 " Tab between buffers
