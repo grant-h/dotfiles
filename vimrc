@@ -13,7 +13,7 @@ set shortmess+=I
 let mapleader = "\<space>"
 
 " Color scheme
-colorscheme sweyla945042
+colorscheme think_dark
 
 " Indentation settings
 set shiftwidth=2
