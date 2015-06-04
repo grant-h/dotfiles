@@ -1,10 +1,10 @@
 "-"-"-"-" Grant Hernandez's .vimrc "-"-"-"-"
 
-" Grab all the plugins. Sorry Vundle
-execute pathogen#infect()
-
 " Immediately disable Vi compatibility
 set nocompatible
+
+" Grab all the plugins. Sorry Vundle
+execute pathogen#infect()
 
 " Get rid of splash screen
 set shortmess+=I
