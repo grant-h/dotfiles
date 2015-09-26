@@ -1,8 +1,10 @@
 # Grant Hernandez's personal bashrc
 
-# add my own executable directories
-export PATH="$PATH:$HOME/bin:/sbin:/usr/sbin"
+# add my own executable directories and allow ~/bin to take precedence
+export PATH="$HOME/bin:$PATH:/sbin:/usr/sbin"
 export PATH="$HOME/ida-6.4/:$PATH"
+export PATH="$HOME/installs/clion-1.0.5/bin:$PATH"
+export PATH="$HOME/installs/idea-IC-141.1532.4/bin:$PATH"
 
 if [[ $- != *i* ]] ; then
 	# Shell is non-interactive.  Be done now!
@@ -25,6 +27,9 @@ shopt -s histappend
 
 # allow for notification on completed shell jobs!
 export PROMPT_COMMAND="echo -ne '\a'"
+
+# prevent super long working directory lines
+export PROMPT_DIRTRIM=4
 
 ###### Aliases ######
 alias vi='vim'

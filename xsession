@@ -13,7 +13,7 @@ xscreensaver -no-splash &
 urxvtd -q -o -f &
 nm-applet &
 dropbox &
-yarssr &
+#yarssr &
 thunar --daemon &
 #udisks-glue &
 # prevent stupid CD tray from opening
