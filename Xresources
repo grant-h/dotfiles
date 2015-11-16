@@ -13,6 +13,7 @@ URxvt.background: #000000
 URxvt.foreground: #ACB4BF
 URxvt*boldFont: xft:Tamsyn:autohint=true:size=10:style=Bold
 URxvt*font: xft:Tamsyn:style=Regular:autohint=true:size=10
+URxvt*termName: xterm-256color
 
 ! ProFont
 !URxvt*font: xft:ProFont:style=Regular:autohint=true:size=9

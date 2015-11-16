@@ -13,7 +13,8 @@ set shortmess+=I
 let mapleader = "\<space>"
 
 " Color scheme
-colorscheme think_dark
+"colorscheme think_dark
+colorscheme sweylapurp
 
 " Indentation settings
 set shiftwidth=2
@@ -61,6 +62,9 @@ set backspace=indent,eol,start
 " When opening a new line and no filetype-specific indenting is enabled, keep
 " the same indent as the line you're currently on. Useful for READMEs, etc.
 set autoindent
+
+" Prevents ViM from breaking in the middle of a word
+set linebreak
 
 " Stop certain movements from always going to the first character of a line.
 " While this behaviour deviates from that of Vi, it does what most users
@@ -238,6 +242,8 @@ nnoremap <Leader>t :NERDTreeToggle<CR>
 nnoremap <Tab><Tab> :e#<cr>
 " Selectively disable Syntastic
 nnoremap <Leader>s :SyntasticToggleMode<CR>
+" Shortcut for swapping header/source (using FSwitch)
+nnoremap <Leader><Tab> :FSHere<CR>
 
 " Spell check!
 map <F5> :setlocal spell! spelllang=en_us<CR>

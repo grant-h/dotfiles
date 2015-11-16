@@ -48,7 +48,7 @@ tbgr() { grep -r "$1" .; }
 # contain the color variables to the function
 ps1_init() {
   source "$HOME/.bash_colors"
-  export PS1="${RI}[${CI}\u${WI} \w ${RI}]${NONE} "
+  export PS1="${MI}[${CI}\u${WI} \w ${MI}>>${NONE} "
 }
 
 ps1_init
