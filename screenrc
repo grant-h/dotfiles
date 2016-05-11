@@ -1,0 +1,36 @@
+# GNU Screen - main configuration file
+# All other .screenrc files will source this file to inherit settings.
+# Author: Christian Wills - cwills.sys@gmail.com
+# Author: Grant Hernandez (2016)
+
+# Get to the point
+startup_message off
+
+# Allow bold colors - necessary for some reason
+attrcolor b ".I"
+
+# No seizures
+vbell off
+
+# Tell screen how to set colors. AB = background, AF=foreground
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+
+# Enables use of shift-PgUp and shift-PgDn
+termcapinfo xterm|xterms|xs|rxvt ti@:te@
+
+# Erase background with current bg color
+defbce "on"
+
+# Enable 256 color term
+term xterm-256color
+
+# Cache 30000 lines for scroll back
+defscrollback 30000
+
+hardstatus alwayslastline
+# Very nice tabbed colored hardstatus line
+hardstatus string '%{= kd} %{= kd}%-w%{= gr}[%{= kW}%n %t%{= gr}]%{= kd}%+w %-= %{dG} %H %{KW} %D %M %d %Y %{= kc} %C%A%{-}'
+
+# Hide hardstatus: ctrl-a f
+bind f eval "hardstatus ignore"
+# Show hardstatus: ctrl-a F
