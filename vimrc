@@ -36,6 +36,9 @@ filetype indent plugin on
 " Buffers persist
 set hidden
 
+" Apparently speeds up some operations
+set lazyredraw
+
 " Better command-line completion
 set wildmenu
 
@@ -65,6 +68,12 @@ set autoindent
 
 " Prevents ViM from breaking in the middle of a word
 set linebreak
+
+" Show a horizontal line where the cursor is
+set cursorline
+
+" Allows the clipboard to work on MacOS (note you need ViM 7.4 or greater)
+set clipboard=unnamed
 
 " Stop certain movements from always going to the first character of a line.
 " While this behaviour deviates from that of Vi, it does what most users
@@ -154,8 +163,9 @@ nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 
-" Quick and easy ESC key. Optional for actual use
-map! jk <ESC>
+" Quick and easy ESC key. Disabled ESC key 
+inoremap jk <ESC>
+inoremap kj <ESC>
 
 " Disable F1 in insert mode and make it escape
 inoremap <F1> <Esc>
