@@ -215,6 +215,7 @@ endfun
 
 " sets the highlighting for the given group
 fun <SID>X(group, fg, bg, attr)
+	let fg = "ff0000"
 	if a:fg != ""
 		exec "hi ".a:group." guifg=#".a:fg." ctermfg=".<SID>rgb(a:fg)
 	endif
@@ -235,9 +236,10 @@ call <SID>X("Normal",		"c6ccb3",	"000000",	"none")
 call <SID>X("Cursor",		"222222",	"ecee90",	"none")
 call <SID>X("CursorLine",	"",			"32322e",	"none")
 call <SID>X("CursorColumn",	"",			"2d2d2d",	"")
-			"CursorIM
-			"Question
-			"IncSearch
+" call <SID>X("CursorIM", "", "", "")
+" call <SID>X("Question", "", "", "")
+" call <SID>X("IncSearch", "", "", "")
+
 call <SID>X("Search",		"444444",	"af87d7",	"")     "search hilight
 call <SID>X("MatchParen",	"ecee90",	"857b6f",	"bold") "{ } ( ) [ ]
 call <SID>X("SpecialKey",	"666666",	"111111",	"none") "Example: 
@@ -248,10 +250,11 @@ call <SID>X("Title",		"f6f3e8",	"",			"bold")
 call <SID>X("VertSplit",	"444444",	"444444",	"none")
 call <SID>X("StatusLine",	"f6f3e8",	"444444",	"italic")
 call <SID>X("StatusLineNC",	"857b6f",	"444444",	"none")
-			"Scrollbar
-			"Tooltip
-			"Menu
-			"WildMenu
+"call <SID>X("Scrollbar", "", "", "")
+"call <SID>X("Tooltip", "", "", "")
+"call <SID>X("Menu", "", "", "")
+"call <SID>X("WildMenu", "", "", "")
+
 call <SID>X("Pmenu",		"f6f3e8",	"444444",	"")
 call <SID>X("PmenuSel",		"121212",	"caeb82",	"")
 call <SID>X("WarningMsg",	"ff0000",	"",			"")
@@ -272,12 +275,12 @@ call <SID>X("Comment",		"00fd5d",	"",			"italic")
 
 call <SID>X("Constant",		"b000ff",	"",			"none")
 call <SID>X("String",		"44f2a5",	"",			"italic")
-call <SID>X("Number",		"0c0cff",	"",			"none")
+call <SID>X("Number",		"8c8cff",	"",			"none")
 call <SID>X("Character",	"b000ff",	"",			"none")
 			"Boolean
 			"Float
 
-call <SID>X("Identifier",	"6b71c6",	"",			"none")
+call <SID>X("Identifier",	"7b81d6",	"",			"none")
 "call <SID>X("Function",		"0c0cff",	"",			"none")
 
 call <SID>X("Statement",	"2eb8cb",	"",			"none")
@@ -294,7 +297,7 @@ call <SID>X("PreProc",		"ff7f00",	"",			"bold")
 			"Macro
 			"PreCondit
 
-call <SID>X("Type",			"7d07ff",	"",			"none")
+call <SID>X("Type",			"7df7ff",	"",			"none")
 
 call <SID>X("Special",		"c870ff",	"",			"none")
 "call <SID>X("Todo",			"857b6f",	"",			"italic")
