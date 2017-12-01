@@ -186,10 +186,15 @@ cnoremap <C-a>  <Home>
 cnoremap <C-e>  <End>
 
 " Mistakes
+command Wa wa
+command WA wa
 command Wq wq
 command WQ wq
+command Qa qa
+command QA qa
 command Q q
 command W w
+" We dont care about Vim encryption, just quicksaving
 
 " set these to your terminal defaults for Arrow-L and Arrow-R
 " may fail if the first command out of command editing mode is 'O'
