@@ -13,9 +13,11 @@ fi
 
 # global viewers
 export EDITOR=/usr/bin/vim
-export MANPAGER=/usr/bin/vimmanpager
-# this is causing issues with Git
-#export PAGER=/usr/bin/vimpager
+
+# Fancy man pager, if it exists
+if [ -e "$HOME/.vimrc_man" ]; then
+  export MANPAGER='env MAN_PN=1 vim -n -u ~/.vimrc_man -i NONE -M +MANPAGER -'
+fi
 
 # prevents duplicate lines from being put in the history
 # and allows a leading space to hide the command from the history

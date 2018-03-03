@@ -1,0 +1,68 @@
+"-"-"-"-" Grant Hernandez's MANPAGER .vimrc "-"-"-"-"
+
+" Immediately disable Vi compatibility
+set nocompatible
+
+" Get rid of splash screen and other messages
+set shortmess+=IFsWt
+
+" Color scheme
+"colorscheme think_dark
+colorscheme sweylapurp
+
+" Syntax Options
+syntax on
+
+" Needed for man pages
+filetype indent plugin on
+
+" Not necessary
+set nomodeline
+
+" Case insensitive search, except when using capital letters
+set ignorecase
+set smartcase
+
+" Highlight searches
+set hlsearch
+
+" Allows the clipboard to work on MacOS (note you need ViM 7.4 or greater)
+set clipboard=unnamed
+
+" Seizure prevention
+set t_vb=
+
+" Enable use of the mouse for all modes
+set mouse=a
+
+" Set the command window height to 1 line
+set cmdheight=1
+
+" Try to make ViM more like less
+set noshowmode
+set noshowcmd
+set noruler
+set scrolloff=999
+
+" Make control up and down scroll by 1
+set scroll=1
+
+" Make j + k sane for a less-like environment
+nnoremap <space> <PageDown>
+nnoremap j <C-d>
+nnoremap k <C-u>
+vnoremap j <C-d>
+vnoremap k <C-u>
+
+" Hide the cursor in man pager mode, but make sure to restore it
+execute "autocmd VimLeave * set t_ve=" . &t_ve
+set t_ve=
+
+" Control+Z not supported as it can leave the cursor in a weird state
+noremap <c-z> <nop>
+
+" Fat finger fixes
+noremap Q ZZ
+command Qa qa
+command QA qa
+command Q q
