@@ -17,6 +17,18 @@ export EDITOR=/usr/bin/vim
 # Fancy man pager, if it exists
 if [ -e "$HOME/.vimrc_man" ]; then
   export MANPAGER='env MAN_PN=1 vim -n -u ~/.vimrc_man -i NONE -M +MANPAGER -'
+# Otherwise fallback to a TERMCAP solution
+else
+  man() {
+    env LESS_TERMCAP_mb=$'\E[01;31m' \
+      LESS_TERMCAP_md=$'\E[01;38;5;74m' \
+      LESS_TERMCAP_me=$'\E[0m' \
+      LESS_TERMCAP_se=$'\E[0m' \
+      LESS_TERMCAP_so=$'\E[38;5;246m' \
+      LESS_TERMCAP_ue=$'\E[0m' \
+      LESS_TERMCAP_us=$'\E[04;38;5;146m' \
+      man "$@"
+  }
 fi
 
 # prevents duplicate lines from being put in the history
@@ -26,6 +38,11 @@ export HISTSIZE="5000"
 
 # append our entries to the history
 shopt -s histappend
+
+# Zsh-like tab completion
+bind 'set show-all-if-ambiguous on'
+# Case insensitive tab completion
+bind 'set completion-ignore-case on'
 
 # allow for notification on completed shell jobs!
 export PROMPT_COMMAND="echo -ne '\a'"
@@ -61,7 +78,7 @@ man() {
 # contain the color variables to the function
 ps1_init() {
   source "$HOME/.bash_colors"
-  export PS1="${MI}[${CI}\u${WI} \w ${MI}>>${NONE} "
+  export PS1="${MI}[${CI}\u${NONE} \w ${MI}>>${NONE} "
 }
 
 ps1_init
