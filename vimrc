@@ -38,9 +38,13 @@ set hidden
 
 " Apparently speeds up some operations
 set lazyredraw
+" But at the cost of not having a status line on entering vim...
+autocmd VimEnter * redraw!
 
 " Better command-line completion
 set wildmenu
+" Wild menu ignore files
+set wildignore+=*.o,*.aux,.git,*.log,*.exe,*.out
 
 " Show partial commands in the last line of the screen
 set showcmd
