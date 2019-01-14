@@ -78,7 +78,7 @@ man() {
 # contain the color variables to the function
 ps1_init() {
   source "$HOME/.bash_colors"
-  export PS1="${MI}[${CI}\u${NONE} \w ${MI}>>${NONE} "
+  export PS1="${MI}[${CI}\u${NONE}@\h \w ${MI}>>${NONE} "
 }
 
 ps1_init
