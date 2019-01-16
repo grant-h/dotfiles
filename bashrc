@@ -70,7 +70,7 @@ ps1_init() {
     # SSH_CONNECTION unset
     export PS1="${MI}[${CI}\u${NONE} \w ${MI}>>${NONE} "
   else
-    export PS1="${MI}[${CI}\u${NONE}@\h \w ${MI}>>${NONE} "
+    export PS1="${MI}[${CI}\u${WI}@\h${NONE} \w ${MI}>>${NONE} "
   fi
 }
 
