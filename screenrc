@@ -30,7 +30,3 @@ defscrollback 30000
 hardstatus alwayslastline
 # Very nice tabbed colored hardstatus line
 hardstatus string '%{= kd} %{= kd}%-w%{= gr}[%{= kW}%n %t%{= gr}]%{= kd}%+w %-= %{dG} %H %{KW} %D %M %d %Y %{= kc} %C%A%{-}'
-
-# Hide hardstatus: ctrl-a f
-#bind f eval "hardstatus ignore"
-# Show hardstatus: ctrl-a F
