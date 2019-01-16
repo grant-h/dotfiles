@@ -301,6 +301,11 @@ call <SID>X("Type",			"7df7ff",	"",			"none")
 
 call <SID>X("Special",		"c870ff",	"",			"none")
 "call <SID>X("Todo",			"857b6f",	"",			"italic")
+"
+hi clear SpellBad
+hi SpellBad cterm=underline
+hi clear SpellLocal
+hi SpellLocal cterm=underline
 
 hi! link VisualNOS	Visual
 hi! link NonText	LineNr
