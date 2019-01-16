@@ -3,8 +3,47 @@
 " Immediately disable Vi compatibility
 set nocompatible
 
-" Grab all the plugins. Sorry Vundle
-execute pathogen#infect()
+" Grab all the plugins. Goodbye pathogen
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+""""""""""""""""""""""""
+" PLUGIN LIST
+""""""""""""""""""""""""
+call plug#begin('~/.vim/vplug')
+
+" Status and navigation
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
+
+" Sets buffer values 'intelligently'
+Plug 'tpope/vim-sleuth'
+
+" Syntax and command helpers
+Plug 'tpope/vim-fugitive'
+Plug 'vim-syntastic/syntastic'
+Plug 'ajh17/VimCompletesMe'
+
+" Syntax specific
+Plug 'leafgarland/typescript-vim'
+Plug 'tikhomirov/vim-glsl'
+Plug 'pangloss/vim-javascript'
+Plug 'derekwyatt/vim-scala'
+
+" TODO
+" goyo (focused writing)
+
+" Initialize plugin system
+call plug#end()
+
+""""""""""""""""""""""""
+" CONFIGURATION
+""""""""""""""""""""""""
 
 " Get rid of splash screen
 set shortmess+=I
@@ -206,14 +245,14 @@ cnoremap <C-a>  <Home>
 cnoremap <C-e>  <End>
 
 " Mistakes
-command Wa wa
-command WA wa
-command Wq wq
-command WQ wq
-command Qa qa
-command QA qa
-command Q q
-command W w
+command! Wa wa
+command! WA wa
+command! Wq wq
+command! WQ wq
+command! Qa qa
+command! QA qa
+command! Q q
+command! W w
 " We dont care about Vim encryption, just quicksaving
 
 " set these to your terminal defaults for Arrow-L and Arrow-R
@@ -239,10 +278,6 @@ map <C-l> <C-w>l
 " which is the default
 map Y y$
 
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 let g:airline#extensions#tabline#enabled = 1
 
 let g:syntastic_always_populate_loc_list = 1
