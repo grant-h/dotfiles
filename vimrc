@@ -289,10 +289,3 @@ map <F5> :setlocal spell! spelllang=en_us<CR>
 " Ctags list
 map <F4> :TlistToggle<CR>
 map <F8> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-
-" Vim hardtime - not hardcore enough for this
-" let g:hardtime_default_on = 1
-" let g:hardtime_allow_different_key = 1
-" let g:hardtime_maxcount = 4
-" let g:hardtime_ignore_buffer_patterns = ["NERD.*"]
-" let g:list_of_visual_keys = ["-", "+", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
