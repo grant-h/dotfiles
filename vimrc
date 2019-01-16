@@ -299,7 +299,11 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
 \}
 let g:ctrlp_working_path_mode = 'r'
-let g:ctrlp_user_command = ['.git', 'cd %s && rg --files-with-matches ".*"', 'find %s -type f']
+
+" If rg (ripgrep) is found in the path, use it to improve CtrlP
+if exepath("rg") != ""
+  let g:ctrlp_user_command = ['.git', 'cd %s && rg --files-with-matches ".*"', 'find %s -type f']
+endif
 
 " Better buffer handling
 nmap <leader>T :enew<cr>
