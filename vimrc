@@ -33,9 +33,10 @@ augroup filetypedetect
 augroup END
 
 " https://github.com/pangloss/vim-javascript
-augroup javascript_folding
+augroup javascript
     au!
     au FileType javascript setlocal foldmethod=manual
+    au FileType javascript set noexpandtab shiftwidth=4 ts=4
 augroup END
 
 augroup spell_checking
@@ -253,13 +254,17 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_python_python_exec = '/usr/bin/python2'
 " Way too big otherwise...
 let g:syntastic_loc_list_height = 5
+" JavaScript checking
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exe = 'npm run lint --'
 
 " CtrlP Customization
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
+  \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site|node_modules)$',
   \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
 \}
 let g:ctrlp_working_path_mode = 'r'
+let g:ctrlp_user_command = ['.git', 'cd %s && rg --files-with-matches ".*"', 'find %s -type f']
 
 " Better buffer handling
 nmap <leader>T :enew<cr>
