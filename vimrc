@@ -32,6 +32,19 @@ augroup filetypedetect
   au! BufRead,BufNewFile *.ejs set filetype=html
 augroup END
 
+" https://github.com/pangloss/vim-javascript
+augroup javascript_folding
+    au!
+    au FileType javascript setlocal foldmethod=manual
+augroup END
+
+augroup spell_checking
+    au!
+    au FileType tex,plaintex setlocal spell! spelllang=en_us
+    au FileType tex,plaintex setlocal spellfile=~/.vim/spell/en.utf-8.tex.add
+augroup END
+
+
 " Gotta auto indent
 filetype indent plugin on
 
