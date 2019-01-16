@@ -78,7 +78,12 @@ man() {
 # contain the color variables to the function
 ps1_init() {
   source "$HOME/.bash_colors"
-  export PS1="${MI}[${CI}\u${NONE}@\h \w ${MI}>>${NONE} "
+  if [ -z ${SSH_CONNECTION+x} ]; then
+    # SSH_CONNECTION unset
+    export PS1="${MI}[${CI}\u${NONE} \w ${MI}>>${NONE} "
+  else
+    export PS1="${MI}[${CI}\u${NONE}@\h \w ${MI}>>${NONE} "
+  fi
 }
 
 ps1_init
