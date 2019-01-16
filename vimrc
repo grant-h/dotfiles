@@ -141,8 +141,8 @@ set list
 " Danger: unicode ahead
 set listchars=tab:\|⋅,trail:⋅,nbsp:⋅
 "set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
-" TODO: get this working with rxvt-unicode
-"let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'bubblegum'
 
 " Checking for vimpager/vimmanpager
 if has("eval") && has("autocmd")
