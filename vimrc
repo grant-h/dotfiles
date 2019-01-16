@@ -301,7 +301,7 @@ let g:ctrlp_custom_ignore = {
 let g:ctrlp_working_path_mode = 'r'
 
 " If rg (ripgrep) is found in the path, use it to improve CtrlP
-if exepath("rg") != ""
+if executable("rg") == 1
   let g:ctrlp_user_command = ['.git', 'cd %s && rg --files-with-matches ".*"', 'find %s -type f']
 endif
 
