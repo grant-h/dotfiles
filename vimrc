@@ -28,6 +28,8 @@ syntax on
 augroup filetypedetect
   " Octave syntax
   au! BufRead,BufNewFile *.m,*.oct set filetype=octave
+  " EJS syntax
+  au! BufRead,BufNewFile *.ejs set filetype=html
 augroup END
 
 " Gotta auto indent
