@@ -1,0 +1,12 @@
+# Spelling dictionaries are inherently personal
+spell/
+
+# No way we're committing these
+undo-files/
+
+# Nope
+.netrwhist
+
+# Package directories
+vplug/
+bundle/
