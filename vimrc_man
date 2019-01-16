@@ -54,12 +54,7 @@ nnoremap k <C-u>
 vnoremap j <C-d>
 vnoremap k <C-u>
 
-" Hide the cursor in man pager mode, but make sure to restore it
-execute "autocmd VimLeave * set t_ve=" . &t_ve
-set t_ve=
-
-" Control+Z not supported as it can leave the cursor in a weird state
-noremap <c-z> <nop>
+autocmd BufWinEnter * call feedkeys("\<C-\>\<C-n>:\<CR>", 'n')
 
 " Fat finger fixes
 noremap Q ZZ
