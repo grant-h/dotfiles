@@ -34,6 +34,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'tikhomirov/vim-glsl'
 Plug 'pangloss/vim-javascript'
 Plug 'derekwyatt/vim-scala'
+Plug 'Shirk/vim-gas'
 
 " TODO
 " goyo (focused writing)
