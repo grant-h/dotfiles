@@ -70,6 +70,8 @@ augroup filetypedetect
   au! BufRead,BufNewFile *.m,*.oct set filetype=octave
   " EJS syntax
   au! BufRead,BufNewFile *.ejs set filetype=html
+  " GNU AS syntax (from Shirk/vim-gas)
+  au! BufRead,BufNewFile *.S,*.s set filetype=gas
 augroup END
 
 " https://github.com/pangloss/vim-javascript
@@ -238,6 +240,8 @@ function! MapF1()
     exec 'help'
   endif
 endfunction
+
+noremap <C-w><C-w> <C-w><C-p>
 
 " Useful mappings
 cnoremap <C-a>  <Home>
