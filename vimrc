@@ -22,7 +22,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 
 " Sets buffer values 'intelligently'
-Plug 'tpope/vim-sleuth'
+" Plug 'tpope/vim-sleuth'
 
 " Syntax and command helpers
 Plug 'tpope/vim-fugitive'
@@ -35,9 +35,10 @@ Plug 'tikhomirov/vim-glsl'
 Plug 'pangloss/vim-javascript'
 Plug 'derekwyatt/vim-scala'
 Plug 'Shirk/vim-gas'
+Plug 'heavenshell/vim-pydocstring'
 
-" TODO
-" goyo (focused writing)
+" Fullscreen writing
+Plug 'junegunn/goyo.vim'
 
 " Initialize plugin system
 call plug#end()
@@ -64,6 +65,19 @@ set expandtab
 " Syntax Options
 syntax on
 
+" Operating system specific commands
+if has('unix')
+  if has('mac')       " osx
+    " TODO: also search for ITERM env variables
+    " iTerm2 cursor changes per mode
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+  else                " linux, bsd, etc
+  endif
+elseif has('win32') || has('win64')
+endif
+
 " Extra Syntaxes
 augroup filetypedetect
   " Octave syntax
@@ -75,11 +89,6 @@ augroup filetypedetect
 augroup END
 
 " https://github.com/pangloss/vim-javascript
-augroup javascript
-    au!
-    au FileType javascript setlocal foldmethod=manual
-    au FileType javascript set noexpandtab shiftwidth=4 ts=4
-augroup END
 
 augroup spell_checking
     au!
@@ -158,6 +167,9 @@ set confirm
 
 " Seizure prevention
 set t_vb=
+
+" Disable MacVim/GVim audible bell
+autocmd! GUIEnter * set vb t_vb=
 
 " Enable use of the mouse for all modes
 set mouse=a
@@ -310,6 +322,23 @@ if executable("rg") == 1
   let g:ctrlp_user_command = ['.git', 'cd %s && rg --files-with-matches ".*"', 'find %s -type f']
 endif
 
+" Goyo customization
+let g:goyo_width = 120
+
+function! s:goyo_enter()
+  set showtabline=2
+  set noshowmode
+endfunction
+
+function! s:goyo_leave()
+  set showmode
+  " Goyo messes up the theme :(
+  AirlineTheme bubblegum
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
 " Better buffer handling
 nmap <leader>T :enew<cr>
 nmap <leader>bq :bp <BAR> bd #<cr>
@@ -327,9 +356,17 @@ nnoremap <Tab><Tab> :e#<cr>
 nnoremap <Leader>s :SyntasticToggleMode<CR>
 " Shortcut for swapping header/source (using FSwitch)
 nnoremap <Leader><Tab> :FSHere<CR>
+" LaTeX Skim forward search
+map <Leader>j :w<CR>:silent !/Applications/Skim.app/Contents/SharedSupport/displayline -r <C-r>=line('.')<CR> %<.pdf %<CR><CR>
 
 " Spell check!
 map <F5> :setlocal spell! spelllang=en_us<CR>
 " Ctags list
 map <F4> :TlistToggle<CR>
 map <F8> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+
+augroup javascript_indent
+    au!
+    au FileType javascript setlocal foldmethod=manual
+    au FileType javascript set noexpandtab shiftwidth=4 ts=4
+augroup END
