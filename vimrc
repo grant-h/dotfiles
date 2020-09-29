@@ -20,6 +20,7 @@ Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'danro/rename.vim'
 
 " Sets buffer values 'intelligently'
 " Plug 'tpope/vim-sleuth'
@@ -84,6 +85,10 @@ augroup filetypedetect
   au! BufRead,BufNewFile *.m,*.oct set filetype=octave
   " EJS syntax
   au! BufRead,BufNewFile *.ejs set filetype=html
+  " Svelte
+  au! BufRead,BufNewFile *.svelte set filetype=html
+  " Javascript ES6
+  au! BufRead,BufNewFile *.cjs,*.mjs set filetype=javascript
   " GNU AS syntax (from Shirk/vim-gas)
   au! BufRead,BufNewFile *.S,*.s set filetype=gas
 augroup END
