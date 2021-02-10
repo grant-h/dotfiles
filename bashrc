@@ -44,8 +44,12 @@ bind 'set show-all-if-ambiguous on'
 # Case insensitive tab completion
 bind 'set completion-ignore-case on'
 
+# Old version
+#export PROMPT_COMMAND="echo -ne '\a'"
+
 # allow for notification on completed shell jobs!
-export PROMPT_COMMAND="echo -ne '\a'"
+source "$HOME/.scripts/preexec.bash.sh"
+preexec_timing_install
 
 # prevent super long working directory lines
 export PROMPT_DIRTRIM=4
