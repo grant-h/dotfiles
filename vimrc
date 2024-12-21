@@ -27,7 +27,7 @@ Plug 'danro/rename.vim'
 
 " Syntax and command helpers
 Plug 'tpope/vim-fugitive'
-Plug 'vim-syntastic/syntastic'
+Plug 'dense-analysis/ale'
 Plug 'ajh17/VimCompletesMe'
 
 " Syntax specific
@@ -178,6 +178,10 @@ autocmd! GUIEnter * set vb t_vb=
 
 " Enable use of the mouse for all modes
 set mouse=a
+if &term =~ '^screen'
+    " tmux knows the extended mouse mode
+    set ttymouse=xterm2
+endif
 
 " Set the command window height to 2 lines
 set cmdheight=2
@@ -302,19 +306,6 @@ map Y y$
 
 let g:airline#extensions#tabline#enabled = 1
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-" I hate seeing useless errors appear when I open files...
-" Also speeds up file opening time
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_python_exec = '/usr/bin/python2'
-" Way too big otherwise...
-let g:syntastic_loc_list_height = 5
-" JavaScript checking
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exe = 'npm run lint --'
-
 " CtrlP Customization
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site|node_modules)$',
@@ -357,8 +348,6 @@ nnoremap <Leader><Leader> :CtrlP<CR>
 nnoremap <Leader>t :NERDTreeToggle<CR>
 " Tab between buffers
 nnoremap <Tab><Tab> :e#<cr>
-" Selectively disable Syntastic
-nnoremap <Leader>s :SyntasticToggleMode<CR>
 " Shortcut for swapping header/source (using FSwitch)
 nnoremap <Leader><Tab> :FSHere<CR>
 " LaTeX Skim forward search
